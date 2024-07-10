@@ -1,0 +1,3 @@
+# Project exclude paths
+/hdfs-api/target/
+/.idea/
