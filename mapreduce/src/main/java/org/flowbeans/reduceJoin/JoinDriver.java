@@ -1,4 +1,4 @@
-package org.reduceJoin;
+package org.flowbeans.reduceJoin;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -15,6 +15,7 @@ public class JoinDriver {
         Configuration configuration = new Configuration();
         Job job =  Job.getInstance(configuration);
         job.setJarByClass(JoinDriver.class);
+
         job.setMapperClass(JoinMapper.class);
         job.setReducerClass(JoinReducer.class);
 
@@ -23,10 +24,10 @@ public class JoinDriver {
 
         job.setOutputKeyClass(JoinBean.class);
         job.setOutputValueClass(NullWritable.class);
-        FileInputFormat.setInputPaths(job,new Path("E:\\GithubProject\\study\\mapreducedemo\\src\\input\\wcount\\join"));
-        FileOutputFormat.setOutputPath(job,new Path("E:\\GithubProject\\study\\mapreducedemo\\src\\output\\wcoutput5"));
 
-        boolean b = job.waitForCompletion(true);
-        System.exit(b ? 0 : 1);
+        FileInputFormat.setInputPaths(job,new Path("E:\\bigdata_project\\Hadoop-study\\mapreduce\\input\\join"));
+        FileOutputFormat.setOutputPath(job,new Path("E:\\bigdata_project\\Hadoop-study\\mapreduce\\output\\join\\wc1"));
+
+        job.waitForCompletion(true);
     }
 }

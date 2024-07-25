@@ -1,4 +1,4 @@
-package org.reduceJoin;
+package org.flowbeans.reduceJoin;
 
 import org.apache.hadoop.io.Writable;
 

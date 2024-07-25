@@ -1,0 +1,6 @@
+JoinBean{id='1004', pname='小米', amount=4}
+JoinBean{id='1001', pname='小米', amount=1}
+JoinBean{id='1005', pname='华为', amount=5}
+JoinBean{id='1002', pname='华为', amount=2}
+JoinBean{id='1006', pname='格力', amount=6}
+JoinBean{id='1003', pname='格力', amount=3}

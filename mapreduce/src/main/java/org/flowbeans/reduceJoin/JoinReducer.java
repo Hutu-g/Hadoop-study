@@ -1,4 +1,4 @@
-package org.reduceJoin;
+package org.flowbeans.reduceJoin;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.hadoop.io.NullWritable;
@@ -20,6 +20,7 @@ public class JoinReducer extends Reducer<Text, JoinBean,JoinBean, NullWritable> 
                 JoinBean temp = new JoinBean();
                 try {
                     BeanUtils.copyProperties(temp,value);
+                    orderList.add(temp);
                 } catch (IllegalAccessException e) {
                     throw new RuntimeException(e);
                 } catch (InvocationTargetException e) {

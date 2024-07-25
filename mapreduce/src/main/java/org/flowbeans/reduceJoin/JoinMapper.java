@@ -1,4 +1,4 @@
-package org.reduceJoin;
+package org.flowbeans.reduceJoin;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -15,6 +15,7 @@ public class JoinMapper extends Mapper<LongWritable, Text,Text, JoinBean> {
 
     @Override
     protected void setup(Mapper<LongWritable, Text, Text, JoinBean>.Context context) throws IOException, InterruptedException {
+        //获取切片的文件的名字
         FileSplit inputSplit = (FileSplit) context.getInputSplit();
         fileName = inputSplit.getPath().getName();
     }
@@ -46,6 +47,4 @@ public class JoinMapper extends Mapper<LongWritable, Text,Text, JoinBean> {
         }
         context.write(outKey,joinBean);
     }
-
-
 }
